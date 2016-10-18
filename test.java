@@ -123,7 +123,7 @@ public class test {
 		
 
 	}
-	
+	//在srcText中查找 keyword出现次数
 	public static int findStr1(String srcText, String keyword) {  
         int count = 0;  
         int leng = srcText.length();  
@@ -202,7 +202,6 @@ public class test {
 					System.out.println("\r求值执行耗时 : "+(System.currentTimeMillis()-ai)/1000f+" 秒 ");
 					}else{
 						System.out.println(expr);
-						
 					}
 				}				
 			}				
@@ -215,6 +214,5 @@ public class test {
 		}
 		in.close();
 	}
-	
 }
 
