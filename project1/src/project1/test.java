@@ -5,6 +5,8 @@ import java.util.regex.Pattern;
 /*change for lab3!*/
 /* 2nd change for lab3*/
 
+
+/*B2*/
 public class test {
 	
     static ArrayList<Double> al = new ArrayList<Double>();
