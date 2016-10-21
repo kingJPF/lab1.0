@@ -1,19 +1,8 @@
-package project1;
+package test;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-/*change for lab3!*/
-/* 2nd change for lab3*/
-/*test for 3.6*/
-
-<<<<<<< HEAD
-/*C4*/
-
-
-=======
-
-/*B2*/
->>>>>>> B2
+/*hello world*/
 public class test {
 	
     static ArrayList<Double> al = new ArrayList<Double>();
@@ -21,7 +10,8 @@ public class test {
     static double MUL =  Math.PI + 1;
 	
 	
-
+//化简函数
+//依次扫描字符串，遇到+/*存储为一个变量，放入数组，将+存为PI  *存为PI+1，计算时依次扫描，先扫描*将两边数字相乘，再扫描加法，讲两边数字相加
 	public static boolean simplify(String expr){
 		int expr_start = 0;
 		int expr_end = 0;
@@ -93,7 +83,8 @@ public class test {
 		}
 		return true;
 	}
-	
+	//求导函数
+	//以+将 字符串分割为多个多项式，计算每个多项式中求导变量出现的次数
 	public static void derivative(String expr,String var){
 		int i,count;
 		if(expr.indexOf(var) == -1){
@@ -104,36 +95,21 @@ public class test {
 		ArrayList<String> result = new ArrayList<String>();
 		count = findStr1(s[0],var);
 		
-		/*
-		if(count == 1){
-			if(s[0].equals(var)){
-				System.out.print(s[0].replace(var, "1"));
-				result.add(s[0].replace(var, "1"));
-			}else{
-			s[0] = s[0].replace(var+"*", "");
-			System.out.print(s[0].replace("*"+var, ""));
-			
-			}
-		}else if(count > 1){
-			System.out.print(  (count) + "*" + s[0].replaceFirst(var + "[*]", "") );
-		}
-		*/
 		
 		for(i = 0;i <= s.length - 1;i++){
 			count = findStr1(s[i],var);
 			if(count == 1){
 				if(s[i].equals(var)){
-					//System.out.print("+"+ s[i].replace(var, "1"));
+
 					result.add(s[i].replace(var, "1"));
 				}
 				else
 				{
 				s[i] = s[i].replace(var+"*", "");
-				//System.out.print( "+" + s[i].replace("*"+var, ""));
+
 				result.add(s[i].replace("*"+var, ""));
 				}
 			}else if(count > 1){
-				//System.out.print( "+"+(count) + "*" + s[i].replaceFirst(var + "[*]", "")  );
 				String temp = (count) + "*" + s[i].replaceFirst(var + "[*]", "");
 				result.add(temp);
 			}
@@ -145,21 +121,9 @@ public class test {
 		}
 		System.out.println();	
 		
-		/*
-		count = findStr1(s[s.length-1],var);
-		
-		if(count == 1){
-			if(s[i].equals(var)){
-				System.out.print(s[i].replace(var, "1"));
-			}else{
-			s[i] = s[i].replace(var+"*", "");
-			System.out.print(s[i].replace("*"+var, ""));
-			}
-		}else if(count > 1){
-			System.out.print(  (count) + "*" + s[i].replaceFirst(var + "[*]", "") );
-		}*/
+
 	}
-	
+	//在srcText中查找 keyword出现次数
 	public static int findStr1(String srcText, String keyword) {  
         int count = 0;  
         int leng = srcText.length();  
@@ -183,8 +147,9 @@ public class test {
 	public static void main(String[] arg){
 		int i=1;
 		Scanner in = new Scanner(System.in);
-		while(true)
-		{
+
+		
+		//正则表达式匹配字符串
 		String expr = in.nextLine();
 		expr = expr.replace(" ", "");
 		String expr1 = expr;
@@ -193,65 +158,61 @@ public class test {
 	    
 	    boolean f = expr.matches(pattern);
 	    if (f){
-	    	System.out.println(expr+ " right");
 	    }
 	    else{
 			System.out.println("Erorr");
+			in.close();
+			return;
 		}
-		while (true){
-			
-			String Command = in.nextLine();
-			String s[] = Command.split(" "); 
-			
-			if(s[0].equals("!simplify")){
-				if(s.length == 0){
-					System.out.println(expr);
-				}
-				else
-				{
-					int flag = 1;
-					for(i = 1;i < s.length;i++){
-						String temp[] = s[i].split("=");
-						if (temp[1].matches("[1-9][0-9]{1,}\\.{0,1}[0-9]{0,}|[0-9]\\.{0,1}[0-9]{0,}"))
-						{
-						
-						}
-						else
-						{
-							System.out.println("wrong input");
-							break;
-						}
-						
-						if(expr.indexOf(temp[0]) == -1){
-							System.out.println("Not find " + temp[0] +" this variable");
-							flag = 0;
-							break;
-						}else{
-							expr = expr.replace(temp[0], temp[1]);
-						}
-					}
-					if (flag==1){
-						long ai=System.currentTimeMillis();
-						if(simplify(expr)){
-							System.out.print(al.get(0));
-						System.out.println("\r求值执行耗时 : "+(System.currentTimeMillis()-ai)/1000f+" 秒 ");
-						}else{
-							System.out.println(expr);
-							
-						}
-					}				
-				}				
-			}else if(s[0].equals("!d/d")){
-				long ai=System.currentTimeMillis();	
-				derivative(expr1,s[1]);
-				System.out.println("\r求导执行耗时 : "+(System.currentTimeMillis()-ai)/1000f+" 秒 ");
-			}else{
-				System.out.println("Command Erorr");
+		//输入命令
+		String Command = in.nextLine();
+		String s[] = Command.split(" "); 
+		//求值或化简
+		if(s[0].equals("!simplify")){
+			if(s.length == 0){
+				System.out.println(expr);
 			}
-		
+			else
+			{
+				int flag = 1;
+				for(i = 1;i < s.length;i++){
+					String temp[] = s[i].split("=");
+					if (temp[1].matches("[1-9][0-9]{1,}\\.{0,1}[0-9]{0,}|[0-9]\\.{0,1}[0-9]{0,}"))
+					{
+					
+					}
+					else
+					{
+						System.out.println("wrong input");
+						break;
+					}
+					
+					if(expr.indexOf(temp[0]) == -1){
+						System.out.println("Not find " + temp[0] +" this variable");
+						flag = 0;
+						break;
+					}else{
+						expr = expr.replace(temp[0], temp[1]);
+					}
+				}
+				if (flag==1){
+					long ai=System.currentTimeMillis();
+					if(simplify(expr)){
+						System.out.print(al.get(0));
+					System.out.println("\r求值执行耗时 : "+(System.currentTimeMillis()-ai)/1000f+" 秒 ");
+					}else{
+						System.out.println(expr);
+					}
+				}				
+			}				
+		}else if(s[0].equals("!d/d")){//求导
+			long ai=System.currentTimeMillis();	
+			derivative(expr1,s[1]);
+			System.out.println("\r求导执行耗时 : "+(System.currentTimeMillis()-ai)/1000f+" 秒 ");
+		}else{
+			System.out.println("Command Erorr");
 		}
-		}
-		
+		in.close();
 	}
 }
 

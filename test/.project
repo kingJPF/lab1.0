@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-/* 2nd change for lab3*/
-
-<<<<<<< HEAD
-/*C4*/
-
-=======
->>>>>>> B2
 <projectDescription>
-	<name>project1</name>
+	<name>test</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -22,8 +15,3 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
 </projectDescription>
-<<<<<<< HEAD
-/*B2*/
-=======
-/*test for 3.6*/
->>>>>>> scene3
