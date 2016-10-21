@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 /* 2nd change for lab3*/
-<<<<<<< HEAD
-
-<<<<<<< HEAD
-/*C4*/
-
-=======
->>>>>>> B2
-=======
->>>>>>> origin/QW
 <projectDescription>
 	<name>project1</name>
 	<comment></comment>
@@ -25,12 +16,4 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
 </projectDescription>
-<<<<<<< HEAD
-<<<<<<< HEAD
-/*B2*/
-=======
-/*test for 3.6*/
->>>>>>> scene3
-=======
 //QW's change
->>>>>>> origin/QW

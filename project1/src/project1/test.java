@@ -4,6 +4,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 /*change for lab3!*/
 /* 2nd change for lab3*/
+<<<<<<< HEAD
 /*test for 3.6*/
 
 <<<<<<< HEAD
@@ -14,6 +15,9 @@ import java.util.regex.Pattern;
 
 /*B2*/
 >>>>>>> B2
+=======
+//QW's change
+>>>>>>> origin/QW
 public class test {
 	
     static ArrayList<Double> al = new ArrayList<Double>();
